@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Face Recognition System</h1>
+        <button id="start-camera">Start Camera</button>
+
+        <div class="video-container" id="video-container">
+            <h2>Camera Feed</h2>
+            <img id="camera-feed" src="{{ url_for('video_feed') }}" alt="Live Camera">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('start-camera').addEventListener('click', function() {
+            document.getElementById('video-container').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
